@@ -1,7 +1,7 @@
 import os
 import subprocess
 import re
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Tuple, Optional, Callable
 
 class GitManager:
     """Handles low-level Git commands for a specific working directory."""
@@ -170,18 +170,45 @@ class GitManager:
         code, stdout, stderr = self._run_git(["commit", "-m", message])
         return (code == 0, stdout if code == 0 else stderr)
 
-    def push(self, remote: str = "origin", branch: Optional[str] = None, set_upstream: bool = True) -> Tuple[bool, str]:
-        """Push commits to remote repository."""
+    def push(self, remote: str = "origin", branch: Optional[str] = None, set_upstream: bool = True, progress_callback: Optional[Callable[[str], None]] = None) -> Tuple[bool, str]:
+        """Push commits to remote repository with optional live stream progress callback."""
         target_branch = branch or self.get_current_branch()
-        args = ["push"]
+        args = ["push", "--progress"]
         if set_upstream:
             args.extend(["-u", remote, target_branch])
         else:
             args.extend([remote, target_branch])
 
-        code, stdout, stderr = self._run_git(args)
-        output = stdout + "\n" + stderr
-        return (code == 0, output.strip())
+        if progress_callback:
+            try:
+                creation_flags = subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0
+                cmd = [self.git_bin, "-C", self.repo_dir] + args
+                process = subprocess.Popen(
+                    cmd,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True,
+                    encoding='utf-8',
+                    errors='replace',
+                    bufsize=1,
+                    creationflags=creation_flags
+                )
+
+                output_lines = []
+                for line in iter(process.stdout.readline, ''):
+                    line_clean = line.strip()
+                    if line_clean:
+                        output_lines.append(line_clean)
+                        progress_callback(line_clean)
+                process.stdout.close()
+                code = process.wait()
+                return (code == 0, "\n".join(output_lines))
+            except Exception as e:
+                return False, str(e)
+        else:
+            code, stdout, stderr = self._run_git(args)
+            output = stdout + "\n" + stderr
+            return (code == 0, output.strip())
 
     def pull(self, remote: str = "origin", branch: Optional[str] = None) -> Tuple[bool, str]:
         """Pull latest changes from remote repository."""

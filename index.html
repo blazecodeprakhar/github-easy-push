@@ -103,8 +103,8 @@
         <a href="Software_Guide.pdf" download="Software_Guide.pdf" class="btn btn-secondary btn-sm" aria-label="Download PDF Guide">
           <i class="fa-solid fa-file-pdf"></i> PDF Guide
         </a>
-        <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-primary btn-sm download-exe-trigger" aria-label="Download Windows Executable">
-          <i class="fa-solid fa-download"></i> Download EXE
+        <a href="GitHubEasyPush-v1.2.zip" download="GitHubEasyPush-v1.2.zip" class="btn btn-primary btn-sm download-exe-trigger" aria-label="Download Package ZIP">
+          <i class="fa-solid fa-download"></i> Download Package (.zip)
         </a>
       </div>
 
@@ -135,12 +135,12 @@
 
             <!-- Download Action Buttons -->
             <div class="hero-actions">
-              <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-primary btn-lg download-exe-trigger" aria-label="Download Standalone Windows Executable">
-                <i class="fa-brands fa-windows"></i> Download Executable (.exe)
+              <a href="GitHubEasyPush-v1.2.zip" download="GitHubEasyPush-v1.2.zip" class="btn btn-primary btn-lg download-zip-trigger" aria-label="Download Software and PDF Guide ZIP Package">
+                <i class="fa-solid fa-file-zipper"></i> Download Software & PDF Guide Package (.zip)
               </a>
 
-              <a href="GitHubEasyPush-v1.2.zip" download="GitHubEasyPush-v1.2.zip" class="btn btn-blue btn-lg download-zip-trigger" aria-label="Download Windows App Package ZIP">
-                <i class="fa-solid fa-file-zipper"></i> Download Package (.zip)
+              <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-blue btn-lg download-exe-trigger" aria-label="Download Direct Standalone Windows Executable">
+                <i class="fa-brands fa-windows"></i> Download Executable (.exe)
               </a>
 
               <a href="Software_Guide.pdf" download="Software_Guide.pdf" class="btn btn-secondary btn-lg" aria-label="Download PDF Manual">
@@ -227,11 +227,11 @@
 
                 <div class="hero-card-download">
                   <div>
-                    <strong>Ready for Deployment</strong>
-                    <p>Single binary executable (.exe)</p>
+                    <strong>Software & User Guide ZIP</strong>
+                    <p>Contains GitHub_Easy_Push.exe & Software_Guide.pdf</p>
                   </div>
-                  <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-primary btn-sm download-exe-trigger" aria-label="Download Executable">
-                    <i class="fa-solid fa-download"></i> Download EXE
+                  <a href="GitHubEasyPush-v1.2.zip" download="GitHubEasyPush-v1.2.zip" class="btn btn-primary btn-sm download-zip-trigger" aria-label="Download Package ZIP">
+                    <i class="fa-solid fa-download"></i> Download Package (.zip)
                   </a>
                 </div>
               </div>
@@ -285,7 +285,7 @@
               </tr>
               <tr>
                 <td>Distribution Format</td>
-                <td>Portable Windows <code>GitHub_Easy_Push.exe</code> (Direct execution or ZIP download)</td>
+                <td>Portable Windows <code>GitHub_Easy_Push.exe</code> & <code>Software_Guide.pdf</code> (ZIP Download)</td>
               </tr>
               <tr>
                 <td>Developer & License</td>
@@ -360,33 +360,33 @@
         <div class="section-header text-center">
           <span class="section-tag">DOWNLOADS</span>
           <h2 class="section-title">Download GitHub Easy Push</h2>
-          <p class="section-desc">Get the standalone executable (.exe), ZIP package, or PDF user guide.</p>
+          <p class="section-desc">Get the complete package ZIP containing the software executable and the official PDF user guide.</p>
         </div>
 
         <div class="download-primary-grid">
-          <!-- Direct Executable Card -->
+          <!-- Complete App Package ZIP Card -->
           <div class="download-main-card tilt-card glow-border">
+            <div class="dl-icon dl-icon-zip"><i class="fa-solid fa-file-zipper"></i></div>
+            <div class="dl-details">
+              <h3>Software & PDF Guide Package (.zip)</h3>
+              <p>Complete distribution zip archive containing <code>GitHub_Easy_Push.exe</code> AND <code>Software_Guide.pdf</code> for easy extraction.</p>
+              <span class="dl-meta"><i class="fa-solid fa-box-archive"></i> GitHubEasyPush-v1.2.zip • Includes EXE & User Guide PDF</span>
+            </div>
+            <a href="GitHubEasyPush-v1.2.zip" download="GitHubEasyPush-v1.2.zip" class="btn btn-primary btn-lg download-zip-trigger" aria-label="Download Complete App Package ZIP">
+              <i class="fa-solid fa-download"></i> Download Package (.zip)
+            </a>
+          </div>
+
+          <!-- Direct Executable Card -->
+          <div class="download-main-card tilt-card">
             <div class="dl-icon"><i class="fa-brands fa-windows"></i></div>
             <div class="dl-details">
               <h3>Direct Windows Executable</h3>
               <p>Single standalone portable executable file. Download and run instantly anywhere on Windows 10 or 11.</p>
               <span class="dl-meta"><i class="fa-solid fa-file-code"></i> GitHub_Easy_Push.exe • 11.2 MB</span>
             </div>
-            <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-primary btn-lg download-exe-trigger" aria-label="Download Direct Executable">
+            <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-blue btn-lg download-exe-trigger" aria-label="Download Direct Executable">
               <i class="fa-solid fa-download"></i> Download .exe File
-            </a>
-          </div>
-
-          <!-- Executable ZIP Card -->
-          <div class="download-main-card tilt-card">
-            <div class="dl-icon dl-icon-zip"><i class="fa-solid fa-file-zipper"></i></div>
-            <div class="dl-details">
-              <h3>App Package (.zip)</h3>
-              <p>Complete application zip archive containing the executable and icon resource for simple extraction.</p>
-              <span class="dl-meta"><i class="fa-solid fa-box-archive"></i> GitHubEasyPush-v1.2.zip</span>
-            </div>
-            <a href="GitHubEasyPush-v1.2.zip" download="GitHubEasyPush-v1.2.zip" class="btn btn-blue btn-lg download-zip-trigger" aria-label="Download App Package ZIP">
-              <i class="fa-solid fa-download"></i> Download Package (.zip)
             </a>
           </div>
 
@@ -409,6 +409,7 @@
           <span class="quick-title">Quick Pages & Files:</span>
           <a href="guide.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-book-open"></i> User Guide Page</a>
           <a href="docs.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-magnifying-glass"></i> Docs & Search Bar</a>
+          <a href="GitHubEasyPush-v1.2.zip" download="GitHubEasyPush-v1.2.zip" class="btn btn-secondary btn-sm"><i class="fa-solid fa-file-zipper"></i> Software + PDF Guide ZIP</a>
           <a href="Software_Guide.pdf" download="Software_Guide.pdf" class="btn btn-secondary btn-sm"><i class="fa-solid fa-file-pdf"></i> Software_Guide.pdf</a>
           <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-secondary btn-sm"><i class="fa-brands fa-windows"></i> GitHub_Easy_Push.exe</a>
           <a href="https://github.com/blazecodeprakhar/github-easy-push" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-brands fa-github"></i> GitHub Repo</a>

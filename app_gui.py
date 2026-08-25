@@ -3,7 +3,7 @@ import sys
 import threading
 import webbrowser
 import tkinter as tk
-from tkinter import ttk, messagebox, filedialog, simpledialog
+from tkinter import ttk, messagebox, filedialog, scrolledtext, simpledialog
 from typing import Optional
 
 from git_manager import GitManager
@@ -741,47 +741,128 @@ class EasyPushGUI(tk.Tk):
             else:
                 return
 
-        def run():
-            self.log("🚀 Running Automatic Push...")
-            
-            ok, msg = self.git_mgr.stage_all()
-            self.log(f"Staging all changes: {msg if msg else 'Done'}")
-            if not ok:
-                messagebox.showerror("Error", f"Failed to stage files:\n{msg}")
-                return
+        # Launch Live Deployment Progress Modal Window
+        self._launch_deployment_modal(
+            title="🚀 One-Click Smart Auto-Push",
+            execute_fn=self._execute_auto_push_backend
+        )
 
-            commit_msg = self.auto_committer.generate_smart_message(
-                auto_version_bump=self.var_auto_bump.get(),
-                bump_type=self.var_auto_bump_type.get()
-            )
+    def _launch_deployment_modal(self, title: str, execute_fn):
+        """Creates a sleek live deployment modal with progress bar and real-time Git streaming console."""
+        modal = tk.Toplevel(self)
+        modal.title("GitHub Easy Push - Live Deployment Engine")
+        modal.geometry("640x480")
+        modal.configure(bg="#0F172A")
+        modal.transient(self)
+        modal.grab_set()
 
-            self.log(f"Committing with message: '{commit_msg}'...")
-            ok, msg = self.git_mgr.commit(commit_msg)
-            self.log(msg)
-            if not ok:
-                messagebox.showwarning("Commit Notice", f"Commit response:\n{msg}")
-                return
+        # Center modal
+        modal.update_idletasks()
+        x = self.winfo_x() + (self.winfo_width() // 2) - 320
+        y = self.winfo_y() + (self.winfo_height() // 2) - 240
+        modal.geometry(f"640x480+{max(0, x)}+{max(0, y)}")
 
-            if self.var_auto_bump.get():
-                curr_ver = self.git_mgr.get_latest_version_tag()
-                next_ver = self.git_mgr.bump_version(curr_ver, self.var_auto_bump_type.get())
-                self.log(f"Creating version tag: {next_ver}...")
-                self.git_mgr.create_tag(next_ver, f"Release {next_ver}")
+        # Header Frame
+        hdr = tk.Frame(modal, bg="#1E293B", padx=15, pady=12)
+        hdr.pack(fill=tk.X, side=tk.TOP)
 
-            self.log("Pushing to GitHub remote origin...")
-            ok, msg = self.git_mgr.push()
-            self.log(msg)
-            if self.var_auto_bump.get():
-                self.git_mgr.push_tags()
+        lbl_title = tk.Label(hdr, text=title, font=("Segoe UI", 14, "bold"), fg="#22D3EE", bg="#1E293B")
+        lbl_title.pack(anchor="w")
 
-            if ok:
-                messagebox.showinfo("Success", "🚀 Smart Auto-Push Completed Successfully!")
-            else:
-                messagebox.showwarning("Push Warning", f"Commit created, but push encountered warning/error:\n{msg}")
+        lbl_status = tk.Label(hdr, text="Initializing deployment pipeline...", font=("Segoe UI", 9), fg="#94A3B8", bg="#1E293B")
+        lbl_status.pack(anchor="w")
 
-            self.refresh_repo_status()
+        # Progress Bar Frame
+        pframe = tk.Frame(modal, bg="#0F172A", padx=15, pady=10)
+        pframe.pack(fill=tk.X)
 
-        threading.Thread(target=run, daemon=True).start()
+        progress_var = tk.DoubleVar(value=5)
+        pbar = ttk.Progressbar(pframe, variable=progress_var, maximum=100)
+        pbar.pack(fill=tk.X, pady=5)
+
+        # Log Output Box
+        log_frame = tk.Frame(modal, bg="#0F172A", padx=15, pady=5)
+        log_frame.pack(fill=tk.BOTH, expand=True)
+
+        lbl_log = tk.Label(log_frame, text="Live Execution Stream Log:", font=("Segoe UI", 9, "bold"), fg="#F8FAFC", bg="#0F172A")
+        lbl_log.pack(anchor="w", pady=(0, 5))
+
+        txt_stream = scrolledtext.ScrolledText(log_frame, bg="#07090E", fg="#38BDF8", font=("Consolas", 9), height=10)
+        txt_stream.pack(fill=tk.BOTH, expand=True)
+
+        # Footer Frame
+        btn_frame = tk.Frame(modal, bg="#1E293B", pady=10, padx=15)
+        btn_frame.pack(fill=tk.X, side=tk.BOTTOM)
+
+        btn_close = tk.Button(btn_frame, text="Deploying...", font=("Segoe UI", 10, "bold"), bg="#334155", fg="#FFFFFF", state=tk.DISABLED, command=modal.destroy, padx=20, pady=5)
+        btn_close.pack(side=tk.RIGHT)
+
+        def append_log(line: str, step_status: str = None, progress_val: float = None):
+            def update_ui():
+                if step_status:
+                    lbl_status.config(text=step_status)
+                if progress_val is not None:
+                    progress_var.set(progress_val)
+                txt_stream.insert(tk.END, line + "\n")
+                txt_stream.see(tk.END)
+                self.log(line)
+            modal.after(0, update_ui)
+
+        def run_thread():
+            ok, result_msg = execute_fn(append_log)
+            def on_complete():
+                if ok:
+                    progress_var.set(100)
+                    lbl_status.config(text="✔ Deployment Completed Successfully to GitHub!", fg="#34D399")
+                    lbl_title.config(fg="#34D399")
+                    btn_close.config(text="✔ Close", bg="#10B981", fg="#000000", state=tk.NORMAL)
+                    txt_stream.insert(tk.END, "\n========================================\n[SUCCESS] Pushed changes & tags to GitHub!\n========================================\n")
+                else:
+                    lbl_status.config(text="⚠ Push Encountered Warning or Error", fg="#FB7185")
+                    btn_close.config(text="Close", bg="#EF4444", fg="#FFFFFF", state=tk.NORMAL)
+                    txt_stream.insert(tk.END, f"\n[NOTICE] {result_msg}\n")
+                txt_stream.see(tk.END)
+                self.refresh_repo_status()
+            modal.after(0, on_complete)
+
+        threading.Thread(target=run_thread, daemon=True).start()
+
+    def _execute_auto_push_backend(self, append_log_fn):
+        """Backend execution logic for Smart Auto-Push with step progress callbacks."""
+        append_log_fn("Scanning workspace for file diffs...", step_status="1/4 Staging modified files...", progress_val=15)
+        ok, msg = self.git_mgr.stage_all()
+        append_log_fn(f"Staging status: {msg if msg else 'All modified files staged.'}")
+        if not ok:
+            return False, f"Failed to stage files: {msg}"
+
+        append_log_fn("Generating smart commit message...", step_status="2/4 Committing changes...", progress_val=35)
+        commit_msg = self.auto_committer.generate_smart_message(
+            auto_version_bump=self.var_auto_bump.get(),
+            bump_type=self.var_auto_bump_type.get()
+        )
+
+        append_log_fn(f"Commit message: '{commit_msg}'")
+        ok, msg = self.git_mgr.commit(commit_msg)
+        append_log_fn(f"Commit output:\n{msg}")
+        if not ok and "nothing to commit" not in msg.lower():
+            return False, f"Commit error: {msg}"
+
+        if self.var_auto_bump.get():
+            append_log_fn("Creating semantic release tag...", step_status="3/4 Creating version tag...", progress_val=60)
+            curr_ver = self.git_mgr.get_latest_version_tag()
+            next_ver = self.git_mgr.bump_version(curr_ver, self.var_auto_bump_type.get())
+            append_log_fn(f"Tagging release {next_ver}...")
+            self.git_mgr.create_tag(next_ver, f"Release {next_ver}")
+
+        append_log_fn("Pushing commits to remote origin on GitHub...", step_status="4/4 Pushing data to GitHub...", progress_val=80)
+        ok, msg = self.git_mgr.push(progress_callback=lambda line: append_log_fn(line, progress_val=90))
+        append_log_fn(msg)
+
+        if self.var_auto_bump.get():
+            append_log_fn("Pushing release tags to remote origin...")
+            self.git_mgr.push_tags()
+
+        return ok, msg
 
     # Manual Push Actions
     def do_stage_all(self):
@@ -813,30 +894,37 @@ class EasyPushGUI(tk.Tk):
             messagebox.showerror("Error", "Please enter a commit title.")
             return
 
-        def run():
+        def execute_manual_backend(append_log_fn):
             bump_option = self.var_manual_bump.get()
             final_msg = msg
             if bump_option != "none":
+                append_log_fn("Creating semantic release tag...", step_status="1/3 Creating version tag...", progress_val=30)
                 curr_ver = self.git_mgr.get_latest_version_tag()
                 next_ver = self.git_mgr.bump_version(curr_ver, bump_option)
                 final_msg = f"[{next_ver}] {msg}"
                 self.git_mgr.create_tag(next_ver, f"Release {next_ver}")
 
-            self.log(f"Committing: '{final_msg}'...")
+            append_log_fn(f"Committing changes: '{final_msg}'...", step_status="2/3 Committing changes...", progress_val=50)
             ok, out = self.git_mgr.commit(final_msg)
-            self.log(out)
+            append_log_fn(out)
+            if not ok and "nothing to commit" not in out.lower():
+                return False, f"Commit error: {out}"
 
-            if ok and self.var_push_after_commit.get():
-                self.log("Pushing to remote...")
-                pok, pout = self.git_mgr.push()
-                self.log(pout)
+            if self.var_push_after_commit.get():
+                append_log_fn("Pushing commits to remote origin on GitHub...", step_status="3/3 Pushing data to GitHub...", progress_val=80)
+                pok, pout = self.git_mgr.push(progress_callback=lambda line: append_log_fn(line, progress_val=90))
+                append_log_fn(pout)
                 if bump_option != "none":
+                    append_log_fn("Pushing release tags to remote origin...")
                     self.git_mgr.push_tags()
+                return pok, pout
 
-            messagebox.showinfo("Manual Commit", "Manual commit operation completed.")
-            self.refresh_repo_status()
+            return True, "Commit complete."
 
-        threading.Thread(target=run, daemon=True).start()
+        self._launch_deployment_modal(
+            title="🚀 Manual Commit & Push Deployment",
+            execute_fn=execute_manual_backend
+        )
 
     # History & Undo Actions
     def do_soft_undo_selected(self):
