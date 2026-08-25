@@ -131,8 +131,9 @@ def create_pdf(filename="Software_Guide.pdf"):
     story.append(t)
     story.append(Spacer(1, 15))
 
-    # Illustrated Guide Sections with Embedded Screenshots
+    # Illustrated Guide Sections with Embedded Real Screenshots
     base_dir = r"c:\Users\prakh\OneDrive\Desktop\researchs"
+    images_dir = os.path.join(base_dir, "assets", "images")
 
     story.append(Paragraph("2. Illustrated Step by Step Guide", h1_style))
 
@@ -142,7 +143,7 @@ def create_pdf(filename="Software_Guide.pdf"):
         "Select your project directory or click Browse. Paste your GitHub remote link into Set GitHub Remote Origin URL and click Save Origin. If your folder is not a Git repo yet, GitHub Easy Push will prompt to initialize Git for you automatically.",
         body_style
     ))
-    dash_img = os.path.join(base_dir, "screenshot_dashboard.png")
+    dash_img = os.path.join(images_dir, "screenshot_dashboard.png")
     if os.path.exists(dash_img):
         story.append(Image(dash_img, width=460, height=270))
         story.append(Spacer(1, 12))
@@ -153,7 +154,7 @@ def create_pdf(filename="Software_Guide.pdf"):
         "Click Self Analyze to inspect parent child commit lineage, audit .gitignore security protection rules for sensitive files (.env, build directories), and monitor commit divergence.",
         body_style
     ))
-    sa_img = os.path.join(base_dir, "screenshot_self_analysis.png")
+    sa_img = os.path.join(images_dir, "screenshot_self_analysis.png")
     if os.path.exists(sa_img):
         story.append(Image(sa_img, width=460, height=270))
         story.append(Spacer(1, 12))
@@ -164,7 +165,7 @@ def create_pdf(filename="Software_Guide.pdf"):
         "Select your automatic version bump preference (Patch +0.0.1, Minor +0.1.0, Major +1.0.0). Click AUTO COMMIT AND PUSH TO GITHUB to stage all changes, format update notes, and push instantly.",
         body_style
     ))
-    ap_img = os.path.join(base_dir, "screenshot_auto_push.png")
+    ap_img = os.path.join(images_dir, "screenshot_auto_push.png")
     if os.path.exists(ap_img):
         story.append(Image(ap_img, width=460, height=270))
         story.append(Spacer(1, 12))
@@ -175,7 +176,7 @@ def create_pdf(filename="Software_Guide.pdf"):
         "Inspect recent commit history. Use Soft Revert to create an inverse commit while keeping local edits, or Hard Reset to restore repository state back to any commit hash.",
         body_style
     ))
-    hu_img = os.path.join(base_dir, "screenshot_history_undo.png")
+    hu_img = os.path.join(images_dir, "screenshot_history_undo.png")
     if os.path.exists(hu_img):
         story.append(Image(hu_img, width=460, height=270))
         story.append(Spacer(1, 12))
@@ -186,7 +187,7 @@ def create_pdf(filename="Software_Guide.pdf"):
         "Manage branches, stash uncommitted working edits, and generate ready to use .gitignore templates for Python, Node, C++, Java, and Go.",
         body_style
     ))
-    dt_img = os.path.join(base_dir, "screenshot_dev_tools.png")
+    dt_img = os.path.join(images_dir, "screenshot_dev_tools.png")
     if os.path.exists(dt_img):
         story.append(Image(dt_img, width=460, height=270))
         story.append(Spacer(1, 12))
@@ -209,3 +210,6 @@ def create_pdf(filename="Software_Guide.pdf"):
 if __name__ == "__main__":
     create_pdf("Software_Guide.pdf")
     create_pdf("GitHub_Easy_Push_Guide.pdf")
+    # Also save in assets/docs/
+    os.makedirs(r"c:\Users\prakh\OneDrive\Desktop\researchs\assets\docs", exist_ok=True)
+    create_pdf(r"c:\Users\prakh\OneDrive\Desktop\researchs\assets\docs\Software_Guide.pdf")
