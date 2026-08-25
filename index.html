@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Tags -->
+  <title>GitHub Easy Push | Futuristic Git Workstation & Automated Commit Engine by Prakhar Yadav</title>
+  <meta name="title" content="GitHub Easy Push | Futuristic Git Workstation & Automated Commit Engine by Prakhar Yadav">
+  <meta name="description" content="One-click automated Git commits, auto-push to GitHub, repository self-analysis, semver version bumper, and commit undo engine for Windows. Created by Prakhar Yadav (@blazecodeprakhar).">
+  <meta name="keywords" content="github easy push, easy git push software, automated git commit tool, git repository undo engine, git version bumper, automatic git push python, prakhar yadav, blazecodeprakhar, windows git gui tool, git auto commit tool">
+  <meta name="author" content="Prakhar Yadav (blazecodeprakhar)">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://blazecodeprakhar.github.io/github-easy-push/">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blazecodeprakhar.github.io/github-easy-push/">
+  <meta property="og:title" content="GitHub Easy Push | Futuristic Git Workstation & Automated Commit Engine">
+  <meta property="og:description" content="Automate Git commits, push to GitHub in one click, perform deep repository self-analysis, and revert past commits safely. Built by Prakhar Yadav (@blazecodeprakhar).">
+  <meta property="og:image" content="icon.png">
+  <meta property="og:site_name" content="GitHub Easy Push">
+
+  <!-- Twitter / X Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://blazecodeprakhar.github.io/github-easy-push/">
+  <meta name="twitter:title" content="GitHub Easy Push | Futuristic Git Workstation Engine">
+  <meta name="twitter:description" content="Automate Git commits, auto-bump semantic versioning, and push to GitHub in one click. Free open-source developer tool.">
+  <meta name="twitter:image" content="icon.png">
+  <meta name="twitter:creator" content="@iitzprakhar">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "GitHub Easy Push",
+        "operatingSystem": "Windows 10, Windows 11, Windows Server",
+        "applicationCategory": "DeveloperApplication",
+        "softwareVersion": "1.2",
+        "description": "GitHub Easy Push is a futuristic Windows Git workstation utility created by Prakhar Yadav (blazecodeprakhar). Automate Git commits, auto-push to remote repositories, perform deep workspace self-analysis, bump semantic versions, and undo commits safely.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Prakhar Yadav",
+          "alternateName": "blazecodeprakhar",
+          "url": "https://blazecodeprakhar.netlify.app",
+          "sameAs": [
+            "https://github.com/blazecodeprakhar",
+            "https://www.linkedin.com/in/prakhar-yadav096/",
+            "https://x.com/iitzprakhar"
+          ]
+        },
+        "downloadUrl": "https://github.com/blazecodeprakhar/github-easy-push",
+        "license": "https://opensource.org/licenses/MIT"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="dark-theme">
+
+  <!-- Canvas Background for Cosmic Falling Star Effect -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="brand-logo" aria-label="GitHub Easy Push Homepage">
+        <img src="icon.png" alt="GitHub Easy Push Icon" class="brand-icon-img">
+        <span class="brand-title">GitHub Easy Push</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#self-analysis">Self Analysis</a></li>
+          <li><a href="#guide">User Guide</a></li>
+          <li><a href="#trust">Security</a></li>
+          <li><a href="#downloads">Downloads</a></li>
+          <li><a href="#author">Author</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/blazecodeprakhar" target="_blank" class="btn btn-secondary btn-sm" aria-label="View Profile on GitHub">
+          <i class="fa-brands fa-github"></i> @blazecodeprakhar
+        </a>
+        <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-primary btn-sm download-exe-trigger" aria-label="Download Windows Executable">
+          <i class="fa-solid fa-download"></i> Download EXE
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Futuristic Hero Section -->
+  <main>
+    <section class="hero" id="overview">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Hero Text -->
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="pulse-dot"></span> NEXT-GEN GIT WORKSTATION ENGINE
+            </div>
+
+            <h1 class="hero-title">
+              Push Code to GitHub <span class="gradient-text">At Light Speed</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              A futuristic, ultra-dark Windows developer utility created by <strong>Prakhar Yadav</strong> (@blazecodeprakhar). Automate Git commits, bump semantic versions, inspect repository lineage, and undo commits in one click.
+            </p>
+
+            <!-- Download Action Buttons -->
+            <div class="hero-actions">
+              <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-primary btn-lg download-exe-trigger" aria-label="Download Standalone Windows Executable">
+                <i class="fa-brands fa-windows"></i> Download Executable (.exe)
+              </a>
+
+              <a href="GitHubEasyPush-v1.2.zip" download="GitHubEasyPush-v1.2.zip" class="btn btn-blue btn-lg download-zip-trigger" aria-label="Download Windows App Package ZIP">
+                <i class="fa-solid fa-file-zipper"></i> Download Package (.zip)
+              </a>
+
+              <a href="https://github.com/blazecodeprakhar" target="_blank" class="btn btn-secondary btn-lg" aria-label="GitHub Profile">
+                <i class="fa-brands fa-github"></i> GitHub Profile
+              </a>
+            </div>
+
+            <!-- Trust Assurance Bar -->
+            <div class="hero-trust-bar">
+              <span class="trust-badge badge-emerald">
+                <i class="fa-solid fa-shield-check"></i> Direct Portable Execution
+              </span>
+              <span class="trust-badge badge-blue">
+                <i class="fa-solid fa-lock"></i> 100% Offline & Private
+              </span>
+              <span class="trust-badge badge-purple">
+                <i class="fa-solid fa-code"></i> MIT Open Source License
+              </span>
+            </div>
+
+            <!-- Specs Summary -->
+            <div class="hero-specs-row">
+              <span><i class="fa-brands fa-windows" style="color: var(--accent-blue);"></i> Windows 10 / 11</span>
+              <span>•</span>
+              <span><i class="fa-solid fa-box"></i> Standalone Executable</span>
+              <span>•</span>
+              <span><i class="fa-solid fa-code-commit" style="color: var(--accent-cyan);"></i> Smart Auto-Committer</span>
+              <span>•</span>
+              <span><i class="fa-solid fa-rotate-left"></i> Commit Undo Engine</span>
+            </div>
+          </div>
+
+          <!-- Hero Visual Card Showcase -->
+          <div class="hero-visual">
+            <div class="hero-card-wrapper">
+              <div class="hero-floating-badge float-1">
+                <i class="fa-solid fa-bolt" style="color: var(--accent-cyan);"></i> One-Click Auto Push
+              </div>
+              <div class="hero-floating-badge float-2">
+                <i class="fa-solid fa-magnifying-glass" style="color: var(--accent-purple);"></i> Self-Analyzing Engine
+              </div>
+
+              <div class="hero-card glow-border">
+                <div class="hero-card-top">
+                  <img src="icon.png" alt="GitHub Easy Push Logo" class="hero-app-icon">
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <h3 class="hero-app-name">GitHub Easy Push</h3>
+                      <span class="hero-app-status"><span class="status-dot"></span> SYS_ACTIVE</span>
+                    </div>
+                    <span class="hero-app-version">v1.2 Workstation Engine</span>
+                  </div>
+                </div>
+
+                <div class="hero-stats-grid">
+                  <div class="stat-box">
+                    <span class="stat-num">1-Click</span>
+                    <span class="stat-lbl">Smart Push</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="stat-num">Auto</span>
+                    <span class="stat-lbl">Semver Tag</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="stat-num">0 Setup</span>
+                    <span class="stat-lbl">Portable EXE</span>
+                  </div>
+                </div>
+
+                <div class="hero-card-features">
+                  <div class="card-feat-item">
+                    <i class="fa-solid fa-circle-check" style="color: var(--accent-emerald);"></i>
+                    <span>Smart File Diff Auto-Committer & Push</span>
+                  </div>
+                  <div class="card-feat-item">
+                    <i class="fa-solid fa-circle-check" style="color: var(--accent-emerald);"></i>
+                    <span>Workspace Self-Analysis & Lineage Graph</span>
+                  </div>
+                  <div class="card-feat-item">
+                    <i class="fa-solid fa-circle-check" style="color: var(--accent-emerald);"></i>
+                    <span>Soft Undo (Revert) & Hard Reset Engine</span>
+                  </div>
+                </div>
+
+                <div class="hero-card-download">
+                  <div>
+                    <strong>Ready for Deployment</strong>
+                    <p>Single binary executable (.exe)</p>
+                  </div>
+                  <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-primary btn-sm download-exe-trigger" aria-label="Download Executable">
+                    <i class="fa-solid fa-download"></i> Download EXE
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specifications Matrix -->
+    <section class="section" id="specifications">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">SPECIFICATIONS</span>
+          <h2 class="section-title">System & Feature Matrix</h2>
+          <p class="section-desc">Key technical specifications, supported Git features, and execution requirements.</p>
+        </div>
+
+        <div class="spec-table-box glow-border">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th scope="col">Specification</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Supported Operating System</td>
+                <td>Windows 10, Windows 11, Windows Server 2019+ (64-bit)</td>
+              </tr>
+              <tr>
+                <td>Git Integration</td>
+                <td>Native Git CLI Subprocess Wrapper (No heavy third-party GUI dependencies)</td>
+              </tr>
+              <tr>
+                <td>Automatic Push Engine</td>
+                <td>Scans file diffs, generates timestamped update notes, stages, commits & pushes</td>
+              </tr>
+              <tr>
+                <td>Versioning Control</td>
+                <td>Semantic Version Bumper (Patch <code>+0.0.1</code>, Minor <code>+0.1.0</code>, Major <code>+1.0.0</code>) & Git Release Tags</td>
+              </tr>
+              <tr>
+                <td>Undo & Rollback</td>
+                <td>Soft Undo (Revert commit safely) & Hard Reset (Restore repo state to commit hash/URL)</td>
+              </tr>
+              <tr>
+                <td>Workspace Self-Analysis</td>
+                <td>Scans <code>.git</code> folders, parent lineage graphs, <code>.gitignore</code> protection auditing</td>
+              </tr>
+              <tr>
+                <td>Distribution Format</td>
+                <td>Portable Windows <code>GitHub_Easy_Push.exe</code> (Direct execution or ZIP download)</td>
+              </tr>
+              <tr>
+                <td>Developer & License</td>
+                <td>Built by Prakhar Yadav (<a href="https://github.com/blazecodeprakhar" target="_blank" style="color: var(--accent-cyan);">@blazecodeprakhar</a>) | MIT License</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Capabilities Grid -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">CAPABILITIES</span>
+          <h2 class="section-title">Features Designed for Developers</h2>
+          <p class="section-desc">Simplifying Git workflows so you can focus on writing great code.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <article class="feature-card tilt-card">
+            <div class="feature-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3>One-Click Auto Push</h3>
+            <p>Automatically scans modified, added, and deleted files, crafts a timestamped summary message, and pushes to GitHub instantly.</p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-check"></i> Automatic file staging & diff scanning</li>
+              <li><i class="fa-solid fa-check"></i> Timestamped update commit messages</li>
+              <li><i class="fa-solid fa-check"></i> Auto-push to GitHub remote origin</li>
+            </ul>
+          </article>
+
+          <!-- Feature 2 -->
+          <article class="feature-card tilt-card">
+            <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+            <h3>Commit Undo & Rollback</h3>
+            <p>Visual timeline of commit history with single-click options to revert commits safely or reset repository state.</p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-check"></i> Soft Undo: Creates inverse commit while keeping local edits</li>
+              <li><i class="fa-solid fa-check"></i> Hard Reset: Restores repository to chosen commit or URL</li>
+              <li><i class="fa-solid fa-check"></i> Paste target commit hash for instant rollback</li>
+            </ul>
+          </article>
+
+          <!-- Feature 3 -->
+          <article class="feature-card tilt-card">
+            <div class="feature-icon"><i class="fa-solid fa-tag"></i></div>
+            <h3>Semantic Version Bumper</h3>
+            <p>Manage software version tags easily with automated semantic version incrementing.</p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-check"></i> Patch (+0.0.1), Minor (+0.1.0), and Major (+1.0.0) options</li>
+              <li><i class="fa-solid fa-check"></i> Auto-creates Git annotated release tags</li>
+              <li><i class="fa-solid fa-check"></i> Pushes tags directly to GitHub</li>
+            </ul>
+          </article>
+
+          <!-- Feature 4 -->
+          <article class="feature-card tilt-card">
+            <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3>Developer Power Tools</h3>
+            <p>Essential utilities for daily software engineering workflows built right into the app.</p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-check"></i> Branch Manager: Create, switch, and delete branches</li>
+              <li><i class="fa-solid fa-check"></i> Stash Manager: Save and pop uncommitted changes</li>
+              <li><i class="fa-solid fa-check"></i> .gitignore Generator for Python, Node, C++, Java & Go</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Self Analysis Showcase Section -->
+    <section class="section" id="self-analysis">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag" style="background: rgba(137, 220, 235, 0.1); color: var(--accent-cyan); border: 1px solid rgba(137, 220, 235, 0.25);">
+            <i class="fa-solid fa-magnifying-glass"></i> SELF-ANALYSIS ENGINE
+          </span>
+          <h2 class="section-title">Deep Workspace & Git Inspection</h2>
+          <p class="section-desc">Drop GitHub Easy Push into any folder to automatically analyze repository structures, parent lineage, and security rules.</p>
+        </div>
+
+        <div class="guide-cards-grid">
+          <div class="guide-card tilt-card">
+            <div class="guide-step-badge">01</div>
+            <div class="guide-card-icon" style="color: var(--accent-cyan); background: rgba(137, 220, 235, 0.1);">
+              <i class="fa-solid fa-sitemap"></i>
+            </div>
+            <h3>Commit Lineage Mapping</h3>
+            <p>Inspects your Git commit tree to display exact parent-child commit lineage ("which commit was committed to which"), authors, and timestamps.</p>
+          </div>
+
+          <div class="guide-card tilt-card">
+            <div class="guide-step-badge">02</div>
+            <div class="guide-card-icon" style="color: var(--accent-emerald); background: rgba(166, 227, 161, 0.1);">
+              <i class="fa-solid fa-shield-check"></i>
+            </div>
+            <h3>.gitignore Protection Audit</h3>
+            <p>Audits your <code>.gitignore</code> rules to ensure sensitive files like <code>.env</code>, <code>node_modules/</code>, and <code>build/</code> are safely protected before pushing.</p>
+          </div>
+
+          <div class="guide-card tilt-card">
+            <div class="guide-step-badge">03</div>
+            <div class="guide-card-icon" style="color: var(--accent-purple); background: rgba(203, 166, 247, 0.1);">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+            <h3>Sync Health & Divergence</h3>
+            <p>Calculates exact commit divergence between your local branch and remote GitHub origin (unpushed local commits vs unpulled remote commits).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick User Guide -->
+    <section class="section section-alt" id="guide">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">USER GUIDE</span>
+          <h2 class="section-title">How to Use GitHub Easy Push</h2>
+          <p class="section-desc">3 simple steps to manage your repositories effortlessly.</p>
+        </div>
+
+        <div class="guide-cards-grid">
+          <div class="guide-card">
+            <div class="guide-step-badge">01</div>
+            <div class="guide-card-icon" style="color: #0284c7; background: rgba(2, 132, 199, 0.1);">
+              <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <h3>Place or Open Your Project</h3>
+            <p>Download <code>GitHub_Easy_Push.exe</code> and place it inside your project folder, or launch it and click <strong>Browse</strong> to select any Git repository on your PC.</p>
+          </div>
+
+          <div class="guide-card">
+            <div class="guide-step-badge">02</div>
+            <div class="guide-card-icon" style="color: #059669; background: rgba(5, 150, 105, 0.1);">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3>Click "One-Click Smart Push"</h3>
+            <p>Click the big <strong>Auto Commit & Push</strong> button! The app will automatically stage changed files, generate a summary message, tag version, and push to GitHub.</p>
+          </div>
+
+          <div class="guide-card">
+            <div class="guide-step-badge">03</div>
+            <div class="guide-card-icon" style="color: #d97706; background: rgba(217, 119, 6, 0.1);">
+              <i class="fa-solid fa-rotate-left"></i>
+            </div>
+            <h3>Undo or Revert Anytime</h3>
+            <p>If you ever need to undo a push or rollback your repository, navigate to the <strong>History & Undo</strong> tab to soft revert or hard reset to any target commit!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Guarantee -->
+    <section class="section" id="trust">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">SECURITY & TRUST</span>
+          <h2 class="section-title">Built for Privacy & Reliability</h2>
+          <p class="section-desc">GitHub Easy Push operates strictly locally on your system using native Windows Git APIs.</p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="trust-card-icon" style="color: #059669; background: rgba(5, 150, 105, 0.1);">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3>100% Transparent & Open Source</h3>
+            <p>Published under the MIT License. Every line of Python code is open for inspection on GitHub.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-card-icon" style="color: #0284c7; background: rgba(2, 132, 199, 0.1);">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <h3>Zero Telemetry & 100% Offline</h3>
+            <p>Runs entirely offline on your computer. Contains zero ads, zero tracking, and zero hidden analytics.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-card-icon" style="color: #7c3aed; background: rgba(124, 58, 237, 0.1);">
+              <i class="fa-solid fa-box"></i>
+            </div>
+            <h3>Portable Executable</h3>
+            <p>Single portable <code>.exe</code> file. No Python installation required on the target computer.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-card-icon" style="color: #d97706; background: rgba(217, 119, 6, 0.1);">
+              <i class="fa-brands fa-git-alt"></i>
+            </div>
+            <h3>Native Git Subprocess Engine</h3>
+            <p>Executes standard Windows Git commands safely via subprocess without modifying your Git configuration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Guide Section -->
+    <section class="section section-alt" id="cli">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">DEVELOPER GUIDE</span>
+          <h2 class="section-title">Run from Source Code</h2>
+          <p class="section-desc">Run or customize GitHub Easy Push directly with Python.</p>
+        </div>
+
+        <div class="cli-box glow-border">
+          <div class="cli-header">
+            <span><i class="fa-solid fa-terminal"></i> Terminal Commands</span>
+            <span>Python 3.10+</span>
+          </div>
+          <div class="cli-body">
+            <div class="cli-line">
+              <span><span class="cli-comment"># 1. Clone repository</span><br><span class="cli-cmd">git clone https://github.com/blazecodeprakhar/github-easy-push.git && cd github-easy-push</span></span>
+              <button class="copy-btn" onclick="copyCode('git clone https://github.com/blazecodeprakhar/github-easy-push.git && cd github-easy-push', this)">Copy</button>
+            </div>
+            <div class="cli-divider"></div>
+            <div class="cli-line">
+              <span><span class="cli-comment"># 2. Install dependencies</span><br><span class="cli-cmd">pip install -r requirements.txt</span></span>
+              <button class="copy-btn" onclick="copyCode('pip install -r requirements.txt', this)">Copy</button>
+            </div>
+            <div class="cli-divider"></div>
+            <div class="cli-line">
+              <span><span class="cli-comment"># 3. Launch application</span><br><span class="cli-cmd">python main.py</span></span>
+              <button class="copy-btn" onclick="copyCode('python main.py', this)">Copy</button>
+            </div>
+            <div class="cli-divider"></div>
+            <div class="cli-line">
+              <span><span class="cli-comment"># 4. Build standalone executable (.exe)</span><br><span class="cli-cmd">python build_exe.py</span></span>
+              <button class="copy-btn" onclick="copyCode('python build_exe.py', this)">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downloads Center -->
+    <section class="section" id="downloads">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">DOWNLOADS</span>
+          <h2 class="section-title">Download GitHub Easy Push</h2>
+          <p class="section-desc">Get the standalone executable (.exe) or the complete ZIP distribution packages.</p>
+        </div>
+
+        <div class="download-primary-grid">
+          <!-- Direct Executable Card -->
+          <div class="download-main-card tilt-card glow-border">
+            <div class="dl-icon"><i class="fa-brands fa-windows"></i></div>
+            <div class="dl-details">
+              <h3>Direct Windows Executable</h3>
+              <p>Single standalone portable executable file. Download and run instantly anywhere on Windows 10 or 11.</p>
+              <span class="dl-meta"><i class="fa-solid fa-file-code"></i> GitHub_Easy_Push.exe • 11.2 MB</span>
+            </div>
+            <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-primary btn-lg download-exe-trigger" aria-label="Download Direct Executable">
+              <i class="fa-solid fa-download"></i> Download .exe File
+            </a>
+          </div>
+
+          <!-- Executable ZIP Card -->
+          <div class="download-main-card tilt-card">
+            <div class="dl-icon dl-icon-zip"><i class="fa-solid fa-file-zipper"></i></div>
+            <div class="dl-details">
+              <h3>App Package (.zip)</h3>
+              <p>Complete application zip archive containing the executable and icon resource for simple extraction.</p>
+              <span class="dl-meta"><i class="fa-solid fa-box-archive"></i> GitHubEasyPush-v1.2.zip</span>
+            </div>
+            <a href="GitHubEasyPush-v1.2.zip" download="GitHubEasyPush-v1.2.zip" class="btn btn-blue btn-lg download-zip-trigger" aria-label="Download App Package ZIP">
+              <i class="fa-solid fa-download"></i> Download Package (.zip)
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Resources Bar -->
+        <div class="quick-resources-bar">
+          <span class="quick-title">Quick Files:</span>
+          <a href="GitHub_Easy_Push.exe" download="GitHub_Easy_Push.exe" class="btn btn-secondary btn-sm"><i class="fa-brands fa-windows"></i> GitHub_Easy_Push.exe</a>
+          <a href="main.py" download="main.py" class="btn btn-secondary btn-sm"><i class="fa-brands fa-python"></i> main.py</a>
+          <a href="app_gui.py" download="app_gui.py" class="btn btn-secondary btn-sm"><i class="fa-solid fa-code"></i> app_gui.py</a>
+          <a href="build_exe.py" download="build_exe.py" class="btn btn-secondary btn-sm"><i class="fa-solid fa-gears"></i> build_exe.py</a>
+          <a href="requirements.txt" download="requirements.txt" class="btn btn-secondary btn-sm"><i class="fa-solid fa-file-lines"></i> requirements.txt</a>
+          <a href="https://github.com/blazecodeprakhar" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Author Profile Section -->
+    <section class="section section-alt" id="author">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">ABOUT DEVELOPER</span>
+          <h2 class="section-title">Created by Prakhar Yadav</h2>
+        </div>
+
+        <div class="author-card glow-border">
+          <div class="author-avatar-wrapper">
+            <img src="https://github.com/blazecodeprakhar.png" alt="Prakhar Yadav GitHub Avatar Profile" class="author-avatar" onerror="this.src='icon.png'">
+            <span class="author-github-badge" title="Active GitHub Profile"><i class="fa-brands fa-github"></i></span>
+          </div>
+
+          <div class="author-info">
+            <h3 class="author-name">Prakhar Yadav</h3>
+            <div class="author-handle">@blazecodeprakhar</div>
+            <p class="author-bio">
+              Full-Stack Software Engineer, Cybersecurity Specialist, and AI practitioner based in Dehradun, India. Dedicated to building high-performance developer utilities, secure software tools, and open-source applications.
+            </p>
+
+            <div class="author-socials">
+              <a href="https://github.com/blazecodeprakhar" target="_blank" class="btn btn-primary btn-sm" aria-label="GitHub Profile">
+                <i class="fa-brands fa-github"></i> GitHub Profile
+              </a>
+              <a href="https://blazecodeprakhar.netlify.app" target="_blank" class="btn btn-secondary btn-sm" aria-label="Portfolio Website">
+                <i class="fa-solid fa-globe"></i> Portfolio Website
+              </a>
+              <a href="https://www.linkedin.com/in/prakhar-yadav096/" target="_blank" class="btn btn-secondary btn-sm" aria-label="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i> LinkedIn
+              </a>
+              <a href="https://x.com/iitzprakhar" target="_blank" class="btn btn-secondary btn-sm" aria-label="Twitter X Profile">
+                <i class="fa-brands fa-x-twitter"></i> Twitter / X
+              </a>
+              <a href="https://www.instagram.com/iitzprakhar/" target="_blank" class="btn btn-secondary btn-sm" aria-label="Instagram Profile">
+                <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <a href="#" class="brand-logo" aria-label="GitHub Easy Push Footer Logo">
+          <img src="icon.png" alt="GitHub Easy Push Icon" class="brand-icon-img">
+          <span class="brand-title">GitHub Easy Push</span>
+        </a>
+        <p class="footer-desc">Open-source Windows Git workstation & automated commit utility.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="#overview">Overview</a>
+        <a href="#specifications">Specifications</a>
+        <a href="#features">Features</a>
+        <a href="#self-analysis">Self Analysis</a>
+        <a href="#downloads">Downloads</a>
+        <a href="https://blazecodeprakhar.netlify.app" target="_blank">Portfolio</a>
+        <a href="https://github.com/blazecodeprakhar" target="_blank">GitHub</a>
+      </nav>
+
+      <div class="footer-bottom">
+        <p>© 2026 Prakhar Yadav (<a href="https://github.com/blazecodeprakhar" target="_blank" style="color: var(--accent-cyan);">@blazecodeprakhar</a>). Distributed under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# Core requirements for GitHub Easy Push
+pyinstaller>=5.0.0
