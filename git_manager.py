@@ -182,7 +182,7 @@ class GitManager:
         if progress_callback:
             try:
                 creation_flags = subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0
-                cmd = [self.git_bin, "-C", self.repo_dir] + args
+                cmd = ["git", "-C", self.repo_dir] + args
                 process = subprocess.Popen(
                     cmd,
                     stdout=subprocess.PIPE,

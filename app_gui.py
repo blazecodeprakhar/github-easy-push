@@ -12,6 +12,48 @@ from github_api import GitHubAPI
 from repo_analyzer import RepoAnalyzer
 import gitignore_templates
 
+class FluidProgressBar(tk.Canvas):
+    """Custom animated fluid green progress bar with percentage readout and glowing tip."""
+    def __init__(self, parent, width=580, height=24, bg="#07090E", **kwargs):
+        super().__init__(parent, width=width, height=height, bg=bg, highlightthickness=1, highlightbackground="#334155", **kwargs)
+        self.curr_val = 5.0
+        self.target_val = 5.0
+        self._animate()
+
+    def set_value(self, val: float):
+        self.target_val = min(100.0, max(0.0, float(val)))
+
+    def _animate(self):
+        try:
+            if not self.winfo_exists():
+                return
+            if abs(self.curr_val - self.target_val) > 0.4:
+                self.curr_val += (self.target_val - self.curr_val) * 0.25
+            else:
+                self.curr_val = self.target_val
+
+            self.delete("all")
+            w = self.winfo_width() or 580
+            h = self.winfo_height() or 24
+
+            fill_w = (self.curr_val / 100.0) * w
+            if fill_w > 0:
+                # Fluid emerald green fill
+                self.create_rectangle(0, 0, fill_w, h, fill="#10B981", outline="")
+                # Glowing cyan-emerald leading tip
+                tip_w = min(18, fill_w)
+                self.create_rectangle(fill_w - tip_w, 0, fill_w, h, fill="#34D399", outline="")
+
+            # Centered Percentage Readout
+            pct_text = f"{int(self.curr_val)}%"
+            text_col = "#000000" if self.curr_val > 45 else "#F8FAFC"
+            self.create_text(w / 2, h / 2, text=pct_text, fill=text_col, font=("Segoe UI", 9, "bold"))
+
+            self.after(30, self._animate)
+        except Exception:
+            pass
+
+
 class EasyPushGUI(tk.Tk):
     """Ultra-Dark Developer Desktop Application for GitHub Easy Push."""
 
@@ -776,8 +818,7 @@ class EasyPushGUI(tk.Tk):
         pframe = tk.Frame(modal, bg="#0F172A", padx=15, pady=10)
         pframe.pack(fill=tk.X)
 
-        progress_var = tk.DoubleVar(value=5)
-        pbar = ttk.Progressbar(pframe, variable=progress_var, maximum=100)
+        pbar = FluidProgressBar(pframe, width=580, height=24)
         pbar.pack(fill=tk.X, pady=5)
 
         # Log Output Box
@@ -802,7 +843,7 @@ class EasyPushGUI(tk.Tk):
                 if step_status:
                     lbl_status.config(text=step_status)
                 if progress_val is not None:
-                    progress_var.set(progress_val)
+                    pbar.set_value(progress_val)
                 txt_stream.insert(tk.END, line + "\n")
                 txt_stream.see(tk.END)
                 self.log(line)
@@ -812,7 +853,7 @@ class EasyPushGUI(tk.Tk):
             ok, result_msg = execute_fn(append_log)
             def on_complete():
                 if ok:
-                    progress_var.set(100)
+                    pbar.set_value(100)
                     lbl_status.config(text="✔ Deployment Completed Successfully to GitHub!", fg="#34D399")
                     lbl_title.config(fg="#34D399")
                     btn_close.config(text="✔ Close", bg="#10B981", fg="#000000", state=tk.NORMAL)
