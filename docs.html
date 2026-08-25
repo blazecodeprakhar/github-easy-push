@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Documentation & Search Center | GitHub Easy Push by Prakhar Yadav</title>
+  <meta name="title" content="Documentation & Search Center | GitHub Easy Push by Prakhar Yadav">
+  <meta name="description" content="Searchable documentation and query center for GitHub Easy Push. Find instant solutions on how to push, undo commits, set remote URLs, bump versions, and build executables with screenshot callouts.">
+  <meta name="keywords" content="github easy push documentation, how to push git, how to undo commit, git search docs, prakhar yadav, blazecodeprakhar">
+  <meta name="author" content="Prakhar Yadav (blazecodeprakhar)">
+  <link rel="canonical" href="https://blazecodeprakhar.github.io/github-easy-push/docs.html">
+
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+
+  <canvas id="space-canvas"></canvas>
+
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo" aria-label="GitHub Easy Push Homepage">
+        <img src="icon.png" alt="GitHub Easy Push Icon" class="brand-icon-img">
+        <span class="brand-title">GitHub Easy Push</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="guide.html">User Guide</a></li>
+          <li><a href="docs.html" class="active">Docs & Search</a></li>
+          <li><a href="index.html#downloads">Downloads</a></li>
+          <li><a href="index.html#author">Author</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="Software_Guide.pdf" download="Software_Guide.pdf" class="btn btn-primary btn-sm" aria-label="Download PDF Guide">
+          <i class="fa-solid fa-file-pdf"></i> Download Illustrated PDF Guide
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding: 80px 0 40px;">
+      <div class="container text-center">
+        <div class="hero-badge">
+          <i class="fa-solid fa-magnifying-glass" style="color: var(--accent-cyan);"></i> DOCUMENTATION & QUERY CENTER
+        </div>
+        <h1 class="hero-title">
+          Search Software <span class="gradient-text">Documentation & Solutions</span>
+        </h1>
+        <p class="hero-subtitle" style="margin: 0 auto 30px;">
+          Type your query below to get instant step by step instructions with visual interface screenshots.
+        </p>
+
+        <!-- Search Bar Box -->
+        <div class="search-box-wrapper glow-border" style="max-width: 680px; margin: 0 auto 20px;">
+          <div style="display: flex; align-items: center; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 6px 14px; backdrop-filter: blur(16px);">
+            <i class="fa-solid fa-magnifying-glass" style="color: var(--accent-cyan); font-size: 1.2rem; margin-right: 12px;"></i>
+            <input type="text" id="doc-search-input" placeholder="Type here (e.g. how to push, undo commit, set origin, bump version, self analyze)..." style="width: 100%; background: transparent; border: none; outline: none; color: var(--text-main); font-size: 1rem; padding: 10px 0;">
+            <button id="clear-search-btn" class="btn btn-secondary btn-sm" style="display: none; padding: 4px 10px;">Clear</button>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+          <span style="font-size: 0.85rem; color: var(--text-muted); align-self: center;">Popular Searches:</span>
+          <button class="quick-query-tag btn btn-secondary btn-sm" onclick="setSearchQuery('how to push')">how to push</button>
+          <button class="quick-query-tag btn btn-secondary btn-sm" onclick="setSearchQuery('undo commit')">undo commit</button>
+          <button class="quick-query-tag btn btn-secondary btn-sm" onclick="setSearchQuery('set origin')">set origin</button>
+          <button class="quick-query-tag btn btn-secondary btn-sm" onclick="setSearchQuery('bump version')">bump version</button>
+          <button class="quick-query-tag btn btn-secondary btn-sm" onclick="setSearchQuery('self analyze')">self analyze</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Search Results Container -->
+    <section class="section" style="padding-top: 10px;">
+      <div class="container">
+        <div id="search-results-list">
+
+          <!-- Doc Entry 1: How to Push -->
+          <article class="doc-card guide-card glow-border" data-keywords="push how to push auto push smart push commit code github" style="margin-bottom: 32px; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div class="feature-icon" style="margin-bottom: 0; width: 42px; height: 42px; font-size: 1.1rem;"><i class="fa-solid fa-rocket"></i></div>
+              <h3 style="font-size: 1.3rem; font-weight: 800;">How to Push Code to GitHub in 1 Click</h3>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px;">
+              Learn how to execute One Click Smart Automatic Push to stage modified files, generate update notes, tag versions, and push to GitHub.
+            </p>
+            <div style="margin-bottom: 16px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+              <img src="screenshot_auto_push.png" alt="Automatic Push Interface Screenshot" style="width: 100%; display: block;">
+            </div>
+            <div class="cli-box" style="margin: 0;">
+              <div class="cli-header"><span>Step by Step Instructions</span><span>Automatic Push</span></div>
+              <div class="cli-body">
+                <div class="cli-line"><span>1. Open GitHub Easy Push and select your project folder.</span></div>
+                <div class="cli-line"><span>2. Navigate to the Automatic Push tab.</span></div>
+                <div class="cli-line"><span>3. Check Auto bump Semantic Version Tag if you want automated versioning (Patch, Minor, Major).</span></div>
+                <div class="cli-line"><span style="color: var(--accent-emerald);">4. Click the big AUTO COMMIT AND PUSH TO GITHUB button. Done!</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Doc Entry 2: Undo Commit -->
+          <article class="doc-card guide-card glow-border" data-keywords="undo undo commit revert reset rollback cancel commit history" style="margin-bottom: 32px; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div class="feature-icon" style="margin-bottom: 0; width: 42px; height: 42px; font-size: 1.1rem;"><i class="fa-solid fa-rotate-left"></i></div>
+              <h3 style="font-size: 1.3rem; font-weight: 800;">How to Undo a Commit or Rollback Repository</h3>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px;">
+              Revert mistakes safely using Soft Undo or Hard Reset to any target commit hash.
+            </p>
+            <div style="margin-bottom: 16px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+              <img src="screenshot_history_undo.png" alt="Commit History and Undo Interface Screenshot" style="width: 100%; display: block;">
+            </div>
+            <div class="cli-box" style="margin: 0;">
+              <div class="cli-header"><span>Undo Methods</span><span>History Tab</span></div>
+              <div class="cli-body">
+                <div class="cli-line"><span>Soft Revert: Select a commit and click Soft Revert Selected Commit. Creates an inverse commit preserving your local edits.</span></div>
+                <div class="cli-line"><span>Hard Reset: Select a commit and click Hard Reset to Selected Commit. Restores repository state strictly back to target commit.</span></div>
+                <div class="cli-line"><span>Paste Commit Hash: Click Paste Target Commit Hash to revert or reset to any remote commit hash.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Doc Entry 3: Set Remote Origin -->
+          <article class="doc-card guide-card glow-border" data-keywords="set origin remote url connect repository link github url" style="margin-bottom: 32px; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div class="feature-icon" style="margin-bottom: 0; width: 42px; height: 42px; font-size: 1.1rem;"><i class="fa-solid fa-link"></i></div>
+              <h3 style="font-size: 1.3rem; font-weight: 800;">How to Set GitHub Remote Origin URL & Auto Init</h3>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px;">
+              Connect any local folder to your remote GitHub repository.
+            </p>
+            <div style="margin-bottom: 16px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+              <img src="screenshot_dashboard.png" alt="Dashboard Interface Screenshot" style="width: 100%; display: block;">
+            </div>
+            <div class="cli-box" style="margin: 0;">
+              <div class="cli-header"><span>Setting Remote Link</span><span>Setup</span></div>
+              <div class="cli-body">
+                <div class="cli-line"><span>1. Paste your GitHub repository URL (https://github.com/username/repository.git) into Set GitHub Remote Origin URL.</span></div>
+                <div class="cli-line"><span>2. Click Save Origin.</span></div>
+                <div class="cli-line"><span style="color: var(--accent-cyan);">3. Smart Auto Init: If the folder is not initialized as a Git repo yet, click Yes when prompted to auto initialize Git!</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Doc Entry 4: Version Bumper -->
+          <article class="doc-card guide-card glow-border" data-keywords="bump version semver tag patch minor major release tag" style="margin-bottom: 32px; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div class="feature-icon" style="margin-bottom: 0; width: 42px; height: 42px; font-size: 1.1rem;"><i class="fa-solid fa-tag"></i></div>
+              <h3 style="font-size: 1.3rem; font-weight: 800;">How Semantic Version Bumping Works</h3>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px;">
+              Automatically calculate and tag release versions (v1.0.0 to v1.0.1, v1.1.0, v2.0.0).
+            </p>
+            <div style="margin-bottom: 16px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+              <img src="screenshot_auto_push.png" alt="Version Bumper Interface Screenshot" style="width: 100%; display: block;">
+            </div>
+            <div class="cli-box" style="margin: 0;">
+              <div class="cli-header"><span>Version Increment Modes</span><span>Semver</span></div>
+              <div class="cli-body">
+                <div class="cli-line"><span>Patch: Increments patch version (e.g. v1.0.0 to v1.0.1) for bug fixes and routine updates.</span></div>
+                <div class="cli-line"><span>Minor: Increments minor version (e.g. v1.0.0 to v1.1.0) for new features.</span></div>
+                <div class="cli-line"><span>Major: Increments major version (e.g. v1.0.0 to v2.0.0) for major releases.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Doc Entry 5: Self Analysis -->
+          <article class="doc-card guide-card glow-border" data-keywords="self analyze workspace audit gitignore lineage parent commit insights" style="margin-bottom: 32px; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div class="feature-icon" style="margin-bottom: 0; width: 42px; height: 42px; font-size: 1.1rem;"><i class="fa-solid fa-sitemap"></i></div>
+              <h3 style="font-size: 1.3rem; font-weight: 800;">How to Use Workspace Self Analysis</h3>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 16px;">
+              Inspect parent child commit lineage, audit .gitignore rules, and check sync health.
+            </p>
+            <div style="margin-bottom: 16px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+              <img src="screenshot_self_analysis.png" alt="Self Analysis Interface Screenshot" style="width: 100%; display: block;">
+            </div>
+            <div class="cli-box" style="margin: 0;">
+              <div class="cli-header"><span>Self Analysis Steps</span><span>Engine</span></div>
+              <div class="cli-body">
+                <div class="cli-line"><span>1. Click Self Analyze in the top bar or open the Self Analysis tab.</span></div>
+                <div class="cli-line"><span>2. Review discovered Git repos, parent lineage graph, and .gitignore rule protection.</span></div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <div id="no-search-results" style="display: none; text-align: center; padding: 40px; background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-color); border-radius: var(--radius-lg);">
+          <i class="fa-solid fa-circle-exclamation" style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 10px;"></i>
+          <h4 style="font-size: 1.2rem; margin-bottom: 8px;">No matching documentation found</h4>
+          <p style="color: var(--text-secondary);">Try searching for alternative keywords like "push", "undo", "origin", "semver", "self analyze", or "build".</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <a href="index.html" class="brand-logo">
+          <img src="icon.png" alt="GitHub Easy Push Icon" class="brand-icon-img">
+          <span class="brand-title">GitHub Easy Push</span>
+        </a>
+        <p class="footer-desc">Open source Windows Git workstation & automated commit utility.</p>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="guide.html">User Guide</a>
+        <a href="docs.html">Docs & Search</a>
+        <a href="index.html#downloads">Downloads</a>
+        <a href="https://github.com/blazecodeprakhar" target="_blank">GitHub</a>
+      </nav>
+
+      <div class="footer-bottom">
+        <p>© 2026 Prakhar Yadav (@blazecodeprakhar). Distributed under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Live Dynamic Search Engine
+    const searchInput = document.getElementById('doc-search-input');
+    const clearBtn = document.getElementById('clear-search-btn');
+    const docCards = document.querySelectorAll('.doc-card');
+    const noResults = document.getElementById('no-search-results');
+
+    function filterDocs() {
+      const query = searchInput.value.toLowerCase().trim();
+      let matchCount = 0;
+
+      if (query.length > 0) {
+        clearBtn.style.display = 'inline-block';
+      } else {
+        clearBtn.style.display = 'none';
+      }
+
+      docCards.forEach(card => {
+        const keywords = card.getAttribute('data-keywords').toLowerCase();
+        const textContent = card.textContent.toLowerCase();
+
+        if (keywords.includes(query) || textContent.includes(query)) {
+          card.style.display = 'block';
+          matchCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (matchCount === 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+
+    function setSearchQuery(text) {
+      if (searchInput) {
+        searchInput.value = text;
+        filterDocs();
+        searchInput.focus();
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterDocs);
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        filterDocs();
+        searchInput.focus();
+      });
+    }
+  </script>
+</body>
+</html>

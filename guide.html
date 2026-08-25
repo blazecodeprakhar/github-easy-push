@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Illustrated User Guide | GitHub Easy Push by Prakhar Yadav</title>
+  <meta name="title" content="Illustrated User Guide | GitHub Easy Push by Prakhar Yadav">
+  <meta name="description" content="Step by step illustrated user guide and documentation for GitHub Easy Push software. Learn how to perform smart automatic commits, version tagging, commit undo, and repository self analysis.">
+  <meta name="keywords" content="github easy push guide, how to use github easy push, git auto commit tutorial, git undo commit guide, prakhar yadav, blazecodeprakhar">
+  <meta name="author" content="Prakhar Yadav (blazecodeprakhar)">
+  <link rel="canonical" href="https://blazecodeprakhar.github.io/github-easy-push/guide.html">
+
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+
+  <canvas id="space-canvas"></canvas>
+
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo" aria-label="GitHub Easy Push Homepage">
+        <img src="icon.png" alt="GitHub Easy Push Icon" class="brand-icon-img">
+        <span class="brand-title">GitHub Easy Push</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="guide.html" class="active">User Guide</a></li>
+          <li><a href="docs.html">Docs & Search</a></li>
+          <li><a href="index.html#downloads">Downloads</a></li>
+          <li><a href="index.html#author">Author</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="Software_Guide.pdf" download="Software_Guide.pdf" class="btn btn-primary btn-sm" aria-label="Download PDF Guide">
+          <i class="fa-solid fa-file-pdf"></i> Download Illustrated PDF Guide
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding: 80px 0 40px;">
+      <div class="container text-center">
+        <div class="hero-badge">
+          <i class="fa-solid fa-book-open" style="color: var(--accent-cyan);"></i> ILLUSTRATED SOFTWARE MANUAL
+        </div>
+        <h1 class="hero-title">
+          GitHub Easy Push <span class="gradient-text">Complete User Guide</span>
+        </h1>
+        <p class="hero-subtitle" style="margin: 0 auto 30px;">
+          Learn how to use every feature of GitHub Easy Push with real interface screenshots, step by step instructions, and detailed module breakdowns.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="Software_Guide.pdf" download="Software_Guide.pdf" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-file-pdf"></i> Download Illustrated PDF Manual
+          </a>
+          <a href="docs.html" class="btn btn-secondary btn-lg">
+            <i class="fa-solid fa-magnifying-glass"></i> Interactive Docs & Search Bar
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide Content Sections with Screenshots -->
+    <section class="section" id="steps">
+      <div class="container">
+
+        <!-- Step 1 Card -->
+        <article class="guide-card glow-border" style="margin-bottom: 40px; padding: 40px;">
+          <div class="guide-step-badge">MODULE 01</div>
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+            <div class="guide-card-icon" style="color: var(--accent-cyan); background: rgba(34, 211, 238, 0.1);">
+              <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <div>
+              <h2 style="font-size: 1.5rem; font-weight: 800;">Main Dashboard & Repository Connection</h2>
+              <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700;">CONNECTING TO GITHUB</span>
+            </div>
+          </div>
+          <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 20px;">
+            Select your project directory or click Browse. Paste your GitHub remote link into Set GitHub Remote Origin URL and click Save Origin. If your folder is not a Git repo yet, GitHub Easy Push will prompt to initialize Git for you automatically.
+          </p>
+          <div style="margin-bottom: 20px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <img src="screenshot_dashboard.png" alt="GitHub Easy Push Dashboard Interface Screenshot" style="width: 100%; display: block;">
+          </div>
+        </article>
+
+        <!-- Step 2 Card -->
+        <article class="guide-card glow-border" style="margin-bottom: 40px; padding: 40px;">
+          <div class="guide-step-badge">MODULE 02</div>
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+            <div class="guide-card-icon" style="color: var(--accent-emerald); background: rgba(52, 211, 153, 0.1);">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <div>
+              <h2 style="font-size: 1.5rem; font-weight: 800;">One Click Smart Automatic Push</h2>
+              <span style="font-size: 0.85rem; color: var(--accent-emerald); font-weight: 700;">INSTANT DEPLOYMENT</span>
+            </div>
+          </div>
+          <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 20px;">
+            The Automatic Push mode scans your project directory, detects file modifications, creates structured commit notes, bumps your version tag, and pushes to GitHub in 1 click.
+          </p>
+          <div style="margin-bottom: 20px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <img src="screenshot_auto_push.png" alt="Automatic Push Interface Screenshot" style="width: 100%; display: block;">
+          </div>
+        </article>
+
+        <!-- Step 3 Card -->
+        <article class="guide-card glow-border" style="margin-bottom: 40px; padding: 40px;">
+          <div class="guide-step-badge">MODULE 03</div>
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+            <div class="guide-card-icon" style="color: var(--accent-purple); background: rgba(192, 132, 252, 0.1);">
+              <i class="fa-solid fa-rotate-left"></i>
+            </div>
+            <div>
+              <h2 style="font-size: 1.5rem; font-weight: 800;">Commit History & Repository Undo Engine</h2>
+              <span style="font-size: 0.85rem; color: var(--accent-purple); font-weight: 700;">SAFE REVERT & HARD RESET</span>
+            </div>
+          </div>
+          <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 20px;">
+            Made a mistake? GitHub Easy Push provides visual timeline inspection with Soft Revert and Hard Reset capabilities.
+          </p>
+          <div style="margin-bottom: 20px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <img src="screenshot_history_undo.png" alt="Commit History and Undo Interface Screenshot" style="width: 100%; display: block;">
+          </div>
+        </article>
+
+        <!-- Step 4 Card -->
+        <article class="guide-card glow-border" style="margin-bottom: 40px; padding: 40px;">
+          <div class="guide-step-badge">MODULE 04</div>
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+            <div class="guide-card-icon" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div>
+              <h2 style="font-size: 1.5rem; font-weight: 800;">Self Analyzing Engine & Lineage Audit</h2>
+              <span style="font-size: 0.85rem; color: var(--accent-amber); font-weight: 700;">WORKSPACE INSIGHTS</span>
+            </div>
+          </div>
+          <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 20px;">
+            The Self Analyzing engine inspects directory structures, checks parent child commit lineage, audits .gitignore protection rules for sensitive files (.env, build directories), and monitors sync health.
+          </p>
+          <div style="margin-bottom: 20px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <img src="screenshot_self_analysis.png" alt="Self Analysis Interface Screenshot" style="width: 100%; display: block;">
+          </div>
+        </article>
+
+        <!-- Step 5 Card -->
+        <article class="guide-card glow-border" style="margin-bottom: 40px; padding: 40px;">
+          <div class="guide-step-badge">MODULE 05</div>
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+            <div class="guide-card-icon" style="color: var(--accent-blue); background: rgba(37, 99, 235, 0.1);">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <div>
+              <h2 style="font-size: 1.5rem; font-weight: 800;">Developer Power Tools & .gitignore Generator</h2>
+              <span style="font-size: 0.85rem; color: var(--accent-blue); font-weight: 700;">UTILITIES</span>
+            </div>
+          </div>
+          <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 20px;">
+            Manage branches, stash uncommitted working edits, and generate ready to use .gitignore templates for Python, Node, C++, Java, and Go.
+          </p>
+          <div style="margin-bottom: 20px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <img src="screenshot_dev_tools.png" alt="Developer Power Tools Screenshot" style="width: 100%; display: block;">
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <a href="index.html" class="brand-logo">
+          <img src="icon.png" alt="GitHub Easy Push Icon" class="brand-icon-img">
+          <span class="brand-title">GitHub Easy Push</span>
+        </a>
+        <p class="footer-desc">Open source Windows Git workstation & automated commit utility.</p>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="index.html">Overview</a>
+        <a href="guide.html">User Guide</a>
+        <a href="docs.html">Docs & Search</a>
+        <a href="index.html#downloads">Downloads</a>
+        <a href="https://github.com/blazecodeprakhar" target="_blank">GitHub</a>
+      </nav>
+
+      <div class="footer-bottom">
+        <p>© 2026 Prakhar Yadav (@blazecodeprakhar). Distributed under the MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
